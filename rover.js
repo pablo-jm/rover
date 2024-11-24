@@ -47,7 +47,7 @@ class Rover {
                 this.orient = letters[2];
             } 
         }
-        return "Posición: (" + this.coordX + ", " + this.coordY + ")" + "Orientación: " + this.orient; 
+        return "Rover Position: (" + this.coordX + ", " + this.coordY + ")" + " Rover Orientation: " + this.orient; 
     }
 }
             }
