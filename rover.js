@@ -17,8 +17,39 @@ class Rover {
                     this.coordX += 1;
                 case w:
                     this.coordX -=1;
-                    
-                }
+            }
+        } else if (letters[i].toLowerCase() === "l" ){
+            switch(this.orient){
+                case n:
+                    this.orient = "W";
+                case s:
+                    this.orient = "E";
+                case e:
+                    this.orient = "N";
+                case w:
+                    this.orient = "S";
+            }     
+        } else if (letters[i].toLowerCase() === "r" ){
+            switch(this.orient){
+                case n:
+                    this.orient = "E";
+                case s:
+                    this.orient = "W";
+                case e:
+                    this.orient = "S";
+                case w:
+                    this.orient = "N";
+            } 
+        } else if (string.match(/^\d+\s\d+(?:\s\w)?$/)){
+            this.coordX = letters[0];
+            this.coordY = letters[1];
+            if (letters[2] != undefined){
+                this.orient = letters[2];
+            } 
+        }
+        return "Posición: (" + this.coordX + ", " + this.coordY + ")" + "Orientación: " + this.orient; 
+    }
+}
             }
             
         }
