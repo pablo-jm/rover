@@ -7,6 +7,16 @@ class Rover {
 
     move(string){
     letters = string.split('');
+    if (string.match(/^\d+\s\d+(?:[NSEW])?$/)){
+            coordXCoordYOrient = string.split(" ");
+            this.coordX = coordXCoordYOrient[0];
+            this.coordY = coordXCoordYOrient[1]:
+            if (coordXCoordYOrient[2] != undefine) {
+                this.orient = coordXCoordYOrient[2].ToUpperCase();
+            }
+    } else {
+        if (letters.match(/^[LMR]+$/)) {
+        for (i=0; i < letters.length(); i++) {
         if(letters[i].toLowerCase() === "m" ){
             switch(this.orient.toLowerCase()){
                 case n:
@@ -40,17 +50,14 @@ class Rover {
                 case w:
                     this.orient = "N";
             } 
-        } else if (string.match(/^\d+\s\d+(?:\s\w)?$/)){
-            this.coordX = letters[0];
-            this.coordY = letters[1];
-            if (letters[2] != undefined){
-                this.orient = letters[2];
-            } 
         }
+        } 
         return "Rover Position: (" + this.coordX + ", " + this.coordY + ")" + " Rover Orientation: " + this.orient; 
     }
 }
             }
+   } 
+} //else formato no valido en el if del regex
             
         }
         
