@@ -13,6 +13,8 @@ class Rover {
             this.coordY = coordXCoordYOrient[1]:
             if (coordXCoordYOrient[2] != undefine) {
                 this.orient = coordXCoordYOrient[2].ToUpperCase();
+            } else {
+                this.orient = "N";
             }
     } else {
         if (letters.match(/^[LMR]+$/)) {
@@ -29,7 +31,7 @@ class Rover {
                     this.coordX -=1;
             }
         } else if (letters[i].toLowerCase() === "l" ){
-            switch(this.orient){
+            switch(this.orient.toLowerCase()){
                 case n:
                     this.orient = "W";
                 case s:
@@ -40,7 +42,7 @@ class Rover {
                     this.orient = "S";
             }     
         } else if (letters[i].toLowerCase() === "r" ){
-            switch(this.orient){
+            switch(this.orient.toLowerCase()){
                 case n:
                     this.orient = "E";
                 case s:
